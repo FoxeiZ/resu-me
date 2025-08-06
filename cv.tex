@@ -2,63 +2,24 @@
 
 \usepackage{url}
 \usepackage{parskip}
-
-%other packages for formatting
 \RequirePackage{color}
 \RequirePackage{graphicx}
 \usepackage[usenames,dvipsnames]{xcolor}
 \usepackage[scale=0.9]{geometry}
-
-%tabularx environment
 \usepackage{tabularx}
-
-%for lists within experience section
 \usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage[unicode, draft=false]{hyperref}
 
-% centered version of 'X' col. type
-\newcolumntype{C}{>{\centering\arraybackslash}X} 
+\newcolumntype{C}{>{\centering\arraybackslash}X}
 
-%to prevent spillover of tabular into next pages
-\usepackage{supertabular}
-\usepackage{tabularx}
-\newlength{\fullcollw}
-\setlength{\fullcollw}{0.47\textwidth}
-
-%custom \section
-\usepackage{titlesec}				
-\usepackage{multicol}
-\usepackage{multirow}
-
-%CV Sections inspired by: 
-%http://stefano.italians.nl/archives/26
 \titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
 \titlespacing{\section}{0pt}{10pt}{10pt}
 
-%for publications
-\usepackage[style=authoryear,sorting=ynt, maxbibnames=2]{biblatex}
-
-%Setup hyperref package, and colours for links
-\usepackage[unicode, draft=false]{hyperref}
 \definecolor{linkcolour}{rgb}{0,0.2,0.6}
 \hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
-\addbibresource{citations.bib}
-\setlength\bibitemsep{1em}
-
-
-%debug page outer frames
-%\usepackage{showframe}
 
 \hbadness=10000
-
-% environments
-\newenvironment{head}[2]
-    {
-    \begin{tabularx}{\linewidth}{@{}l X r@{}}
-    \textbf{#1} & \hfill &  #2 \\[3.75pt]
-    \end{tabularx}
-    }
-    {
-    }
 
 \newenvironment{itemList}[2]
     {
@@ -68,40 +29,37 @@
     }
     {
     \end{itemize}
-    \end{minipage}    
+    \end{minipage}
     }
 
-% commands
+\newcommand{\listSubHeading}[1]{
+    \item[] \noindent\hspace{-1em}\textit{#1}
+    }
+
 \newcommand{\resumeItem}[1]{
     \begin{itemize}[nosep,after=\strut, leftmargin=2em, itemsep=3pt,label={}]
     \item \textbf{#1}
     \end{itemize}
 }
 
-
 \begin{document}
 
-% non-numbered pages
 \pagestyle{empty}
 
-%--------------------------------------TITLE-------------------------------------------
 \begin{tabularx}{\linewidth}{@{} C @{}}
     \Huge{Nguyen Ngoc Duy Bao} \\[7.5pt]
     \href{tel:+84396370405}{\raisebox{-0.05\height}\ +84 396-370-405} \ $|$\
     \href{mailto:foxeiz2004@gmail.com}{\raisebox{-0.05\height}\ foxeiz2004@gmail.com} \ $|$\
     \href{https://github.com/foxeiz}{\raisebox{-0.05\height}\ github.com/foxeiz} \ $|$\
-    \href{https://linkedin.com/in/username}{\raisebox{-0.05\height}\ linkedin}
+    \href{https://linkedin.com/in/foxeiz}{\raisebox{-0.05\height}\ linkedin.com/in/foxeiz}
 \end{tabularx}
 
-%-----------------------------------EXPERIENCE SECTIONS--------------------------------
-
-%Interests/ Keywords/ Summary
 \section{Summary}
 A pupil aiming at Software Engineer with a strong foundation in back-end development and a proven track record of delivering robust solutions for both personal innovations and academic excellence. Experienced in building
 scalable APIs, managing databases, and optimizing server-side performance across a variety of domains.
+
 Committed to writing clean, maintainable code and collaborating effectively in team-driven environments. Open to new challenges and dedicated to continuous learning in software engineering.
 
-%Skill
 \section{Technical Skills}
 \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=4pt, label={}]
     \item \textbf{Programming Languages:} Python, C\#, Go, JavaScript, Lua
@@ -110,7 +68,6 @@ Committed to writing clean, maintainable code and collaborating effectively in t
     \item \textbf{Tools \& Technologies:} Git, Docker, Linux (Fedora), Ruff
 \end{itemize}
 
-%Experience
 \section{Key Projects}
 
 \begin{itemList}{Nameless*}{\href{https://github.com/team-nameless/nameless-discord-bot/}{Github}}
@@ -119,13 +76,13 @@ Committed to writing clean, maintainable code and collaborating effectively in t
 \end{itemList}
 
 \begin{itemList}{proxy-server}{\href{https://github.com/foxeiz/proxy-server/}{Github}}
-    \item -- Developed a custom proxy server, focusing on modifying HTTP requests and responses.
-    \item -- Used Quart for asynchronous web handling
+    \item -- Developed a custom proxy server, focusing on modifying HTTP requests and responses based on user-defined rules.
+    \item -- Used Quart for asynchronous web handling.
 \end{itemList}
 
 \begin{itemList}{mpv-discord-cplugin}{\href{https://github.com/foxeiz/mpv-discord-cplugin/}{Github}}
     \item -- Developed a custom plugin for MPV media player, integrating Discord Rich Presence.
-    \item -- Used Lua for scripting and IPC for communication with Discord.
+    \item -- Used C for scripting and Lua JIT for IPC communication with Discord.
 \end{itemList}
 
 \begin{itemList}{dca (maintainer)}{\href{https://github.com/foxeiz/dca/}{Github}}
@@ -133,10 +90,17 @@ Committed to writing clean, maintainable code and collaborating effectively in t
     \item -- Focused on audio processing, streaming and performance tuning.
 \end{itemList}
 
-
+\newpage
 \section{Academic Achievements}
 
+\begin{itemList}{ecommerce-prj}{\href{https://github.com/FoxeiZ/ecommerce-prj/}{Github}}
+    \listSubHeading{Lead Developer}
+    \item -- Developed a full-stack e-commerce application as a school project.
+    \item -- Used ASP.NET and Microsoft SQL Server.
+\end{itemList}
+
 \begin{itemList}{huoo}{\href{https://github.com/foxeiz/huoo/}{Github}}
+    \listSubHeading{Lead Developer}
     \item -- Music application for a school assignment.
 \end{itemList}
 
@@ -146,8 +110,6 @@ Committed to writing clean, maintainable code and collaborating effectively in t
 \end{itemList}
 
 
-
-%--------------------------------------EDUCATION-----------------------------------------
 \section{Education}
 \begin{tabularx}{\linewidth}{@{}l X@{}}
     2021 & \hfill  (Grades) \\
@@ -159,7 +121,6 @@ Committed to writing clean, maintainable code and collaborating effectively in t
     \item Participated in community discussions and issue reporting
 \end{itemList}
 
-%-----------------------------------SKILLS----------------------------------
 \section{Skills}
 \begin{tabularx}{\linewidth}{@{}l X@{}}
     Some Skills      & \normalsize{This, That, Some of this and that etc.}                                 \\
