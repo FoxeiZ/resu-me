@@ -21,11 +21,11 @@
 
 \hbadness=10000
 
-\newenvironment{itemList}[2]
+\newenvironment{itemList}[3][]
     {
-    \noindent\hspace{1em}\textbf{#1}\hfill#2\\[3.75pt]
+    \noindent\hspace{1em}\textbf{#2}\hfill#3\\[3.75pt]
     \begin{minipage}[t]{\linewidth}
-    \begin{itemize}[nosep,after=\strut, leftmargin=2em, itemsep=3pt,label={}]
+    \begin{itemize}[nosep,after=\strut, leftmargin=2em, itemsep=3pt,label={},#1]
     }
     {
     \end{itemize}
@@ -35,12 +35,6 @@
 \newcommand{\listSubHeading}[1]{
     \item[] \noindent\hspace{-1em}\textit{#1}
     }
-
-\newcommand{\resumeItem}[1]{
-    \begin{itemize}[nosep,after=\strut, leftmargin=2em, itemsep=3pt,label={}]
-    \item \textbf{#1}
-    \end{itemize}
-}
 
 \begin{document}
 
@@ -55,15 +49,13 @@
 \end{tabularx}
 
 \section{Summary}
-A pupil aiming at Software Engineer with a strong foundation in back-end development and a proven track record of delivering robust solutions for both personal innovations and academic excellence. Experienced in building
-scalable APIs, managing databases, and optimizing server-side performance across a variety of domains.
-
-Committed to writing clean, maintainable code and collaborating effectively in team-driven environments. Open to new challenges and dedicated to continuous learning in software engineering.
+A IT student seeking Software Engineering internship opportunities. I have good experience with back-end development through personal projects and coursework. I've built several APIs, worked with different databases, and improved server performance. \\
+I write clean code that's easy to maintain and enjoy working in teams. I'm eager to learn new technologies and grow my skills in software development.
 
 \section{Technical Skills}
 \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=4pt, label={}]
     \item \textbf{Programming Languages:} Python, C\#, Go, JavaScript, Lua
-    \item \textbf{Frameworks \& Libraries:} Flask, ASP.NET, Next.js
+    \item \textbf{Frameworks \& Libraries:} Flask, fastapi, ASP.NET, Next.js, Express.js
     \item \textbf{Databases:} MongoDB, MySQL, SQLite
     \item \textbf{Tools \& Technologies:} Git, Docker, Linux (Fedora), Ruff
 \end{itemize}
@@ -71,8 +63,8 @@ Committed to writing clean, maintainable code and collaborating effectively in t
 \section{Key Projects}
 
 \begin{itemList}{Nameless*}{\href{https://github.com/team-nameless/nameless-discord-bot/}{Github}}
-    \item -- A Discord bot built with meta-programming and asynchronous in Python.
-    \item -- Used Ruff for fast linting and uv for efficient package management.
+    \item -- A Discord bot developed using meta-programming techniques and asynchronous programming in Python.
+    \item -- Utilized Ruff for code linting and uv for dependency management.
 \end{itemList}
 
 \begin{itemList}{proxy-server}{\href{https://github.com/foxeiz/proxy-server/}{Github}}
@@ -94,14 +86,22 @@ Committed to writing clean, maintainable code and collaborating effectively in t
 \section{Academic Achievements}
 
 \begin{itemList}{ecommerce-prj}{\href{https://github.com/FoxeiZ/ecommerce-prj/}{Github}}
-    \listSubHeading{Lead Developer}
-    \item -- Developed a full-stack e-commerce application as a school project.
-    \item -- Used ASP.NET and Microsoft SQL Server.
+    \listSubHeading{\href{https://github.com/FoxeiZ/ecommerce-prj/graphs/contributors}{\textcolor{black}{Lead Developer}}}
+    \item -- Built a simple full-stack e-commerce application.
+    \item -- Used ASP.NET, Bootstrap5, and Microsoft SQL Server.
 \end{itemList}
 
 \begin{itemList}{huoo}{\href{https://github.com/foxeiz/huoo/}{Github}}
-    \listSubHeading{Lead Developer}
-    \item -- Music application for a school assignment.
+    \listSubHeading{\href{https://github.com/FoxeiZ/huoo/graphs/contributors}{\textcolor{black}{Lead Developer}}}
+    \item -- A cross-platform music application for a school assignment.
+    \item -- Used Flutter for the front-end.
+    \item -- Implemented user authentication using Firebase and SQLite for data storage.
+\end{itemList}
+
+\begin{itemList}{huoo-api}{\href{https://github.com/foxeiz/huoo-api}{Github}}
+    \listSubHeading{\href{https://github.com/FoxeiZ/huoo-api/graphs/contributors}{\textcolor{black}{Lead Developer}}}
+    \item -- The back-end API for the huoo music application.
+    \item -- Used FastAPI for building the API and Firestore for data storage.
 \end{itemList}
 
 \begin{itemList}{CoffeShopManagerWebsite-BE}{\href{https://github.com/foxeiz/CoffeShopManagerWebsite-BE/}{Github}}
@@ -111,9 +111,9 @@ Committed to writing clean, maintainable code and collaborating effectively in t
 
 
 \section{Education}
-\begin{tabularx}{\linewidth}{@{}l X@{}}
-    2021 & \hfill  (Grades) \\
-\end{tabularx}
+\begin{itemList}{HUFLIT}{\href{https://huflit.edu.vn/}{Website}}
+    \item 2022 - Present \hfill  (2.81/4.0)\\
+\end{itemList}
 
 \section{Open Source Contributions}
 \begin{itemList}{extensions-source}{\href{https://github.com/keiyoushi/extensions-source}{GitHub}}
@@ -121,11 +121,27 @@ Committed to writing clean, maintainable code and collaborating effectively in t
     \item Participated in community discussions and issue reporting
 \end{itemList}
 
+\newpage
 \section{Skills}
-\begin{tabularx}{\linewidth}{@{}l X@{}}
-    Some Skills      & \normalsize{This, That, Some of this and that etc.}                                 \\
-    Some More Skills & \normalsize{Also some more of this, Some more that, And some of this and that etc.} \\
-\end{tabularx}
+\begin{itemList}[itemsep=5pt]{Hard Skills}{}
+    \item -- \textbf{Version Control:} Git, GitHub
+    \item -- \textbf{Debugging:} Proficient in using debugging tools
+    \item -- \textbf{Databases:} Experience with MongoDB, MySQL, and SQLite
+    \item -- \textbf{API Development:} Flask, FastAPI, Express.js
+\end{itemList}
+
+\begin{itemList}[itemsep=5pt]{Soft Skills}{}
+    \item -- \textbf{Problem Solving:} Strong analytical skills
+    \item -- \textbf{Teamwork:} Effective collaboration in team environments
+    \item -- \textbf{Communication:} Clear and concise communication skills
+    \item -- \textbf{Adaptability:} Quick learner, able to adapt to new technologies
+\end{itemList}
+
+\section{Languages}
+\begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=4pt, label={}]
+    \item \textbf{English:} Intermediate (B1)
+    \item \textbf{Vietnamese:} Native
+\end{itemize}
 
 \vfill
 \center{\footnotesize Last updated: \today}
